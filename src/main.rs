@@ -5,7 +5,7 @@ use percentage::Percentage;
 use regex::Regex;
 
 fn usage() {
-    println!("Usage: rs-tpa-analyze <genome file path>\nNote, that file must not contain header!");
+    println!("Usage: rs-tpa-analyze <length of partition> <genome file path>\nNote, that file must not contain header!");
 }
 
 fn version(){
@@ -34,7 +34,10 @@ fn main() {
                 version();
                 return;
             }
-            let filepath = &args[1];
+        },
+        2 => {
+            let length = &args[1].parse::<i64>().unwrap();
+            let filepath = &args[2];
             if !(Path::new(filepath).is_file()){
                 panic!("Error: couldn't read file at specified filepath!");
             }
@@ -47,7 +50,7 @@ fn main() {
                     || contents.chars().nth(0).unwrap() == 'N') {
                 panic!("Error: file seems to contain a header or not a raw genome!")
             }
-            println!("Parsing genome in file: {}", filepath);
+            println!("Parsing genome in file: {}, partition length: {}", filepath, length);
             let mut size : usize = contents.len();
             if contents.chars().last().unwrap() == '\n' {
                 size = contents.len() - 1;
