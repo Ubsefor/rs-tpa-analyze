@@ -15,7 +15,7 @@ You also need GCC or any other cc-compliant linker to build the project. I use G
 (OPTIONAL) You also need to install git-lfs for ncbi-genomes to be pulled from the repo automatically. See the [wiki](https://github.com/git-lfs/git-lfs/wiki/Installation). If you do not wish to install git-lfs, you can simply download files directly from the github. Mind the file encoding as Windows uses CR LF line breaks style, while unix-like systems commonly use LF!
 
 On Unix-like systems with rust available: 
-`git clone https://github.com/Ubsefor/rs-genome ; cd rs-genome ; cargo build --release`
+`git clone https://github.com/Ubsefor/rs-tpa-analyze ; cd rs-tpa-analyze ; cargo build --release`
 
 # Running:
 
