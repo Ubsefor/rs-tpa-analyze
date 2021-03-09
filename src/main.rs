@@ -53,7 +53,7 @@ fn main() {
                 size = contents.len() - 1;
             }
             println!("Total genome size: {}", size);
-            
+
             return ;
         },
         
@@ -71,16 +71,6 @@ mod tests {
     #[test]
     fn test_counts(){
         assert_eq!(count_genes("NNN".to_string(), 'N'), 3);
-    }
-
-    #[test]
-    fn test_cgaps(){
-        assert_eq!(count_gaps("ANNNNNNNNNN".to_string()), 1);
-        assert_eq!(count_gaps("AN".to_string()), 0);
-        assert_eq!(count_gaps("A".to_string()), 0);
-        assert_eq!(count_gaps("ANANA".to_string()), 0);
-        assert_eq!(count_gaps("ANNNNNNNNNNANA".to_string()), 1);
-        assert_eq!(count_gaps("ANNNNNNNNNNNNNNNNNNNNNNNNNANA".to_string()), 1);
     }
     
 }
