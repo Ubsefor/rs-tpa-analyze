@@ -35,7 +35,7 @@ fn main() {
                 return;
             }
         },
-        2 => {
+        3 => {
             let length = &args[1].parse::<i64>().unwrap();
             let filepath = &args[2];
             if !(Path::new(filepath).is_file()){
